@@ -1,0 +1,16 @@
+# 编译产物
+bin/
+
+# 运行期数据（WebView 缓存、导出结果）
+bin/data/
+bin/export/
+
+# 临时文件
+*.tmp
+*.log
+
+# 编辑器配置
+.obsidian/
+
+# 首次构建自动下载的 WebView2 SDK（本地缓存，不入库）
+lib/
