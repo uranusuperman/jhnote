@@ -2,11 +2,12 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey.svg)
+[![Release](https://img.shields.io/github/v/release/uranusuperman/jhnote?sort=semver)](https://github.com/uranusuperman/jhnote/releases/latest ) **👈 下载**
 
 华为云空间备忘录导出为 Markdown 笔记，**C# + WebView2 原生实现**：
 一个 66KB 的 exe + 两个 WebView2 DLL 即可运行。
 
-**使用方法**：先点「登录」扫码 → 状态变「已登录（笔记 N 条）」→ 再点「开始导出」。
+**使用方法**：解压后运行jhnote.exe → 先点「登录」扫码 → 状态变「已登录（笔记 N 条）」→ 再点「开始导出」。
 
 协议：MIT　|　本项目在 AI 辅助下完成
 
