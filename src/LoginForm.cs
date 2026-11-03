@@ -106,8 +106,30 @@ namespace HwNote
             catch (Exception ex)
             {
                 Console.Error.WriteLine("✗ 无法初始化 WebView2：" + ex.Message);
+                ShowInitError(ex);
                 Close();
             }
+        }
+
+        /// <summary>初始化失败时把原因显示出来，避免“点登录就闪退”。</summary>
+        void ShowInitError(Exception ex)
+        {
+            try
+            {
+                MessageBox.Show(this,
+                    "无法初始化 WebView2，登录窗口打不开。\n\n"
+                    + "错误：" + ex.Message + "\n\n"
+                    + "浏览器数据目录：\n" + _profileDir + "\n\n"
+                    + "常见原因：\n"
+                    + "1) 已有另一个 jhnote 实例在运行（同一数据目录只允许一个）\n"
+                    + "2) 程序所在目录或数据目录没有写入权限\n"
+                    + "3) 杀毒软件拦截了 WebView2 的浏览器进程\n\n"
+                    + "可尝试：关闭所有 jhnote / msedgewebview2 进程后重试；\n"
+                    + "或把 jhnote.exe 和两个 DLL 复制到普通目录（如 D:\\jhnote）再运行。",
+                    "jhnote 无法启动浏览器",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch { }
         }
 
         async Task PollAsync()
